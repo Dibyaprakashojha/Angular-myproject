@@ -1,0 +1,46 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  First name:<input type="text" name="fName" ngModel #firstName="ngModel" />
+  <p *ngIf="firstName.touched && firstName.value == ''">
+    enter your first name
+  </p>
+  <span
+    *ngIf="
+      firstName.dirty &&
+      (firstName.value.length < 5 || firstName.value.length > 15)
+    "
+  >
+    length should be greater than 5 or less than 15
+  </span>
+  <br />
+  Email: <input type="email" name="email" ngModel #email /> <span></span> <br />
+  Password: <input type="password" name="password" ngModel #password /> <br />
+  <label for="gender">Gender:</label>
+  <input type="radio" name="gender" ngModel #gender value="male" />Male
+  <input type="radio" name="gender" ngModel #gender value="female" />Female
+  <br />
+  <div ngModelGroup="address">
+    City:
+    <select name="city" ngModel #city="ngModel">
+      <option [ngValue]="city" *ngFor="let city of cities">
+        {{ city }}
+      </option>
+    </select>
+    <br />
+    State: <input type="text" name="state" ngmodel #state /> <br />
+  </div>
+  <input type="submit" value="Add User" [disabled]="!userForm.valid" />
+  <button value="Reset" (click)="resetForm(userForm)">Reset</button>
+  <button value="Reset" (click)="resetUserForm()">Reset Form</button>
+</form>
+{{ firstName.valid }} {{ firstName.invalid }} <br />
+{{ firstName.dirty }} {{ firstName.pristine }} <br />
+{{ firstName.touched }} {{ firstName.untouched }} <br />
+Valid:{{ userForm.valid }}
+<br />
+<br />
+Touched:{{ userForm.touched }} <br />
+Untouched:{{ userForm.untouched }} <br />
+Pristine:{{ userForm.pristine }} <br />
+Dirty:{{ userForm.dirty }} <br />
+Result:{{ userForm.value | json }} <br />
+Submitted:{{ userForm.submitted }} <br />

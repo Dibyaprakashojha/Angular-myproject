@@ -1,0 +1,13 @@
+<h3 appBasicHighlight>Using Basic Highlight Directive</h3>
+<h3 appRenderHighlight>Using Render Highlight Directive</h3>
+<h3 appHostHighlight>Using Host Highlight Directive</h3>
+
+<input [(ngModel)]="username" />
+<h3>Using Structural Highlight Directive</h3>
+<!-- if username is not Dibya then Welcmoe the user -->
+<h3 *appNotIf="username == 'Dibya'">Welcome {{ username | title }}</h3>
+<!-- This is executed if username is not Dibya -->
+{{ "Dibya" | title: "m" }} <br />
+{{ "Priya" | title: "f" }} <br />
+
+{{ todayDate }} | time }}

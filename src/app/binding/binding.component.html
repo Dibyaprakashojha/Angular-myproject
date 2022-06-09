@@ -1,0 +1,54 @@
+<h4 [class]="headerClass">Checking View Encapsulation</h4>
+
+<p>binding works!</p>
+{{ message }}<br />
+{{ employee.name | uppercase }} <br />
+{{ employee.city | lowercase }} <br />
+{{ employee | json }} <br />
+{{ 100 + 200 }} <br />
+<img
+  src="https://images.pexels.com/photos/225157/pexels-photo-225157.jpeg?cs=srgb&dl=pexels-fox-225157.jpg&fm=jpg"
+  alt="camera"
+  width="100px"
+  height="100px"
+/>
+<h3>Property Binding</h3>
+<img src="{{ mylogo }}" width="100px" height="100px" /> <span> </span>
+<img [src]="mylogo" width="100px" height="100px" /> <span> </span>
+<img bind-src="mylogo" width="100px" height="100px" />
+<button [disabled]="buttonStatus">Click Me!</button>
+
+<h3>Event Binding</h3>
+<button (click)="show()">Show Message</button> <br />
+<button (click)="greetUser('Dibya')">Greet User</button>
+
+<h5 [class]="footerClass">copyrights</h5>
+<h5 [class]="'footer'">copyrights</h5>
+<h5 [class.footer]="!applyClass">all rights reserved</h5>
+<h4 [class]="applyClass ? headerClass : footerClass">Using variable name</h4>
+<h4 [class]="!applyClass ? 'header' : 'footer'">Using class name directly</h4>
+
+<h3>Style Binding</h3>
+<h4 [style.textTransform]="'uppercase'">Giving the value directly</h4>
+<h4 [style.textTransform]="headerText">Passing the property name</h4>
+<h4 [style.color]="headerColor">Passing the property name as color</h4>
+<h4 [style]="applyClass ? { 'background-color': 'red' } : { color: 'green' }">
+  Using boolean
+</h4>
+<h4 [style]="!applyClass ? { 'background-color': 'red' } : { color: 'green' }">
+  Using boolean
+</h4>
+<h4
+  [style]="!applyClass ? { 'letter-spacing': '4px' } : { color: headerColor }"
+>
+  Using boolean
+</h4>
+
+<h4>Two way Data binding</h4>
+<input type="text" class="text" [(ngModel)]="username" /> <br />
+{{ "Welcome " + username }}
+
+<h3>Template reference variable</h3>
+Enter Name<input type="text" #customer />
+<button (click)="greetCustomer(customer.value)">Greet Message</button>
+{{ nmessage }}

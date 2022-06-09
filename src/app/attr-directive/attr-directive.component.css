@@ -1,0 +1,20 @@
+.one {
+  color: green;
+  text-transform: uppercase;
+}
+
+.two {
+  background-color: orange;
+  letter-spacing: 3px;
+}
+
+.three {
+  font-style: italic;
+}
+
+.back {
+  color: rgb(37, 55, 174);
+}
+.front {
+  color: rgb(8, 118, 14);
+}

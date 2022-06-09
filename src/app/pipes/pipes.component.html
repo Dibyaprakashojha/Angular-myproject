@@ -1,0 +1,55 @@
+<!-- <h3>
+  {{ "Have a Great Day" | slice: 7 }} <br />
+  {{ "Have a Great Day" | slice: 7:12 }} <br />
+  {{ ["Apple", "Orange", "Grapes", "Kiwi", "Plums"] | slice: 1 }} <br />
+  {{ ["Apple", "Orange", "Grapes", "Kiwi", "Plums"] | slice: 1:4 }} <br />
+  {{ 0.8658 | percent: "1.0-2" }}<br />
+  {{ 0.8658 | number: "1.0-2" }}<br />
+</h3>
+
+<h3>List Of Employees</h3>
+<ul>
+  <li *ngFor="let employee of employeeArray" [style.list-style-type]="'none'">
+    <h3>
+      Name: {{ employee.name | uppercase }} <br />
+      City: {{ employee.city | uppercase }} <br />
+      Salary: {{ employee.salary | currency: "Rs. " }} <br />
+      Bonus: {{ employee.bonus | percent: "1.0-2" }}<br />
+      Date Of Birth: {{ employee.dateOfBirth | date }}<br /> -->
+<!-- Jan 1, 1997 -->
+<!-- Date Of Birth: {{ employee.dateOfBirth | date: "shortDate" }}<br /> -->
+<!-- 1/1/97 -->
+<!-- Date Of Birth: {{ employee.dateOfBirth | date: "mediumDate" }}<br /> -->
+<!-- Jan 1, 1997 -->
+<!-- Date Of Birth: {{ employee.dateOfBirth | date: "fullDate" | uppercase -->
+<!-- }}<br /> -->
+<!-- WEDNESDAY, JANUARY 1, 1997 -->
+<!-- Date Of Birth: {{ employee.dateOfBirth | date: "short" }}<br /> -->
+<!-- 1/1/97, 5:30 AM-->
+<!-- Date Of Birth: {{ employee.dateOfBirth | date: "shortDate" }}<br /> -->
+<!-- 1/1/97 -->
+<!-- Date Of Birth: {{ employee.dateOfBirth | date: "shortTime" }}<br /> -->
+<!-- 5:30 AM -->
+<!-- </h3> -->
+<!-- </li> -->
+<!-- </ul> -->
+
+<!-- Enter choice: <input type="text" [(ngModel)]="choiceType" /> -->
+Choose Property Name:
+<select [(ngModel)]="propertyName">
+  <option *ngFor="let property of propNames" value="{{ property }}">
+    {{ property | titlecase }}
+  </option>
+</select>
+
+Enter Choice: <input [(ngModel)]="choiceType" />
+
+<ul>
+  <li *ngFor="let course of courses | filter: propertyName:choiceType">
+    <p>Name: {{ course.courseName }}</p>
+    <p>Cost: {{ course.cost }}</p>
+    <p>Type: {{ course.type }}</p>
+    <p>Medium: {{ course.medium }}</p>
+    <p *ngIf="course.trainer != undefined">Trainer: {{ course.trainer }}</p>
+  </li>
+</ul>

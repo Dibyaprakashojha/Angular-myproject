@@ -1,0 +1,13 @@
+<div class="container" [ngStyle]="{ backgroundColor: 'pruple' }">
+  <app-course-child [acadname]="'Shristi'"></app-course-child>
+  <app-course-child [acadname]="'JSPIDERS'"></app-course-child>
+  <app-course-child [acadname]="'NEXTW'"></app-course-child>
+</div>
+
+<ul>
+  <li *ngFor="let child of childArray">
+    {{ child.acadname }}
+    {{ child.courseName }}
+    {{ child.trainerName }}
+  </li>
+</ul>

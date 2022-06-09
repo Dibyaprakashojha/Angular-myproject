@@ -1,0 +1,6 @@
+<div class="container" [ngStyle]="{ backgroundColor: 'pink' }">
+  <h1 #headerOne>Academy Name:{{ academyName }}</h1>
+  <h2>Course Name:{{ coursename }}</h2>
+  <h2>Trainer Name:{{ trainerName }}</h2>
+  <app-course-child [acadname]="academyName"></app-course-child>
+</div>

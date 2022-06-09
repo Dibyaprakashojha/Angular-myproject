@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+p {
+  color: orange;
+}
+
+h3 {
+  letter-spacing: 8px;
+}
+
+h4 {
+  color: red;
+  text-transform: uppercase;
+}

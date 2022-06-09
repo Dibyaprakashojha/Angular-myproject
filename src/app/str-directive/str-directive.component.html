@@ -1,0 +1,24 @@
+<h2 *ngIf="username == 'Rahul'">Welcome {{ username }}</h2>
+<h2 *ngIf="username == 'Rahul'; then temp1; else temp2"></h2>
+<ng-template #temp1>Welcome {{ username }}</ng-template>
+<ng-template #temp2>Wrong user</ng-template>
+
+<h3>Using ngFor</h3>
+<ul>
+  <li *ngFor="let course of courses" [style.list-style-type]="'none'">
+    <h3>{{ course | uppercase }}</h3>
+  </li>
+</ul>
+
+<h3>List Of Courses</h3>
+<ul>
+  <li *ngFor="let course of coursesArray" [style.list-style-type]="'none'">
+    <h3>
+      Name: {{ course.courseName | uppercase }} <br />
+      Cost: {{ course.cost | currency: "Rs. " }} <br />
+      Type: {{ course.type | lowercase }} <br />
+      Medium: {{ course.medium | lowercase }}<br />
+      Trainer: {{ course.trainer | uppercase }}
+    </h3>
+  </li>
+</ul>

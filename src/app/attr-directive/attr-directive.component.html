@@ -1,0 +1,34 @@
+<h2 [ngClass]="'one two three'">NgClass with String</h2>
+<h2 [ngClass]="['three', 'two']">NgClass with Array</h2>
+<h2 [ngClass]="{ one: fruit == 'apple', three: fruit.includes('o') }">
+  Using String
+</h2>
+
+<ul>
+  <li *ngFor="let course of coursesArray" [style.list-style-type]="'none'">
+    <h3
+      [ngClass]="{
+        back: course.type == 'backend',
+        front: course.type == 'frontend'
+      }"
+    >
+      Name: {{ course.courseName | uppercase }} <br />
+      Cost: {{ course.cost | currency: "Rs. " }} <br />
+      Type: {{ course.type | lowercase }} <br />
+      Medium: {{ course.medium | lowercase }}<br />
+      Trainer: {{ course.trainer | uppercase }}
+    </h3>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of coursesArray" [style.list-style-type]="'none'">
+    <h3 [ngStyle]="{ color: 'red', 'text-tranform': 'uppercase' }">
+      Name: {{ course.courseName | uppercase }} <br />
+      Cost: {{ course.cost | currency: "Rs. " }} <br />
+      Type: {{ course.type | lowercase }} <br />
+      Medium: {{ course.medium | lowercase }}<br />
+      Trainer: {{ course.trainer | uppercase }}
+    </h3>
+  </li>
+</ul>

@@ -1,0 +1,20 @@
+<div [ngStyle]="{ 'background-color': 'lightgreen' }">
+  <h2>Parent Component</h2>
+  <br />
+  {{ pmessage1 }} <br />
+  {{ pmessage2 }} <br />
+  Enter Parent: <input type="text" #parentName (keyup)="(0)" />
+  <app-child
+    [parent1]="pmessage1"
+    [parent2]="pmessage2"
+    [parent3]="parentName.value"
+    [childO]="'Welcome to child component'"
+    [childT]="'Last Child'"
+    (messageEvent)="firstChild = $event"
+    (childEvent)="secondChild = $event"
+  >
+  </app-child>
+  <h3>Child Data</h3>
+  {{ firstChild }} <br />
+  {{ secondChild }}
+</div>

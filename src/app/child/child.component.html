@@ -1,0 +1,12 @@
+<div [ngStyle]="{ 'background-color': 'beige' }">
+  <h3>Child Component</h3>
+  Enter Name<input type="text" #child /> <button (click)="show()">Show</button>
+  <br />
+  <button (click)="printName(child.value)">Print</button> <br />
+  <h3>All Data</h3>
+  {{ child1 }} <br />
+  {{ child2 }} <br />
+  {{ parent1 }} <br />
+  {{ parent2 }} <br />
+  {{ parent3 }} <br />
+</div>
